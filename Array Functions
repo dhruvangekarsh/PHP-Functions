@@ -1,0 +1,144 @@
+==============================
+	Array Function
+==============================
+
+
+$cars=array("Volvo","BMW","Toyota");// Print the array with name
+echo "I like " . $cars[0] . ", " . $cars[1] . " and " . $cars[2] . "."."<br>";//Indexed array
+echo 'I Like ';
+foreach($cars as $key)
+{
+	echo $key.", ";
+}
+
+$age=array("Peter"=>"35","Ben"=>"37","Joe"=>"43");//associative array 
+echo "Peter is " . $age['Peter'] . " years old.";
+
+$car=array("Volvo"=>"1990","BMW"=>"1994","Toyota"=>"2001");//array to upper case 
+print_r(array_change_key_case($car,CASE_UPPER));
+echo "<br>";
+
+$car=array("Volvo"=>"1990","BMW"=>"1994","Toyota"=>"2001");//array to lower case 
+print_r(array_change_key_case($car,CASE_LOWER));
+echo "<br>";
+
+$name = array("Cat","Dog","Goat","Dog","Dog","Cat","Dog");
+print_r(array_count_values($name));//count number total animals
+echo "<br>";
+
+a1=array("a"=>"red","b"=>"green","c"=>"blue","d"=>"yellow");
+$a2=array("e"=>"red","f"=>"green","g"=>"blue");//Compare the values of two arrays and return the differences
+$result = array_diff($a1,$a2);
+print_r($result);
+
+$a1=array("a"=>"red","b"=>"green","c"=>"blue","d"=>"yellow");//Compare the keys and values of two arrays and return the differences
+$a2=array("a"=>"red","b"=>"green","f"=>"blue");
+$result = array_diff_assoc($a1,$a2);
+print_r($result);
+echo "<br>";
+
+$a1=array("a"=>"red","b"=>"green","c"=>"blue","d"=>"yellow");//Compare the keys of two arrays and return the differences
+$a2=array("a"=>"red","b"=>"green","d"=>"blue");
+$result = array_diff_key($a1,$a2);
+print_r($result);
+echo "<br>";
+
+
+
+$dat = array_fill(0,3,"Red");//Fill an array with values
+print_r($dat);
+echo "<br>";
+$da = array_fill(3,4,"cyan");
+print_r($da);
+
+$a1=array("a"=>"red","b"=>"green","c"=>"blue","d"=>"yellow");//Compare the values of two arrays and return the matches
+$a2=array("a"=>"red","b"=>"green","d"=>"blue");
+$res= array_intersect($a1,$a2);
+print_r($res);
+echo "<br>";
+
+$a=array("Volvo"=>"XC90","BMW"=>"X5","Toyota"=>"Highlander");//Return an array containing the keys
+print_r(array_keys($a));
+echo "<br>";
+
+$col1 = array("red","green","Orange");//Merge two arrays into one array
+$col2 = array("White","Brown");
+$color = array_merge($col1,$col2);
+print_r($color);
+echo "<br>";
+
+$pets=array("Dog","Cat","Horse","Bear","Zebra");//Return a sorted array in ascending order
+array_multisort($pets);
+echo "<br>";
+
+$pad=array("red","green");//Return 5 elements and insert a value of "blue" to the new elements in the array
+print_r(array_pad($pad,5,"blue"));
+echo "<br>";
+
+$c = array("red","green","Orange");
+array_pop($col1);//remove the last elemnet of the array
+print_r($c);
+echo "<br>";
+
+$num = array(5,10);// Return the product
+echo(array_product($num)); 
+echo"<br>";
+
+$co1 = array("red","green");//Replace the values of the first array ($co1) with the values from the second array ($co2)
+$co2 = array("White","Brown");
+print_r(array_replace($co1,$co2));
+echo "<br>";
+
+$d=array("Volvo","BMW","Toyota");//Return an array in the reverse order
+print_r(array_reverse($d));
+echo "<br>";
+
+$c=array("a"=>"red","b"=>"green","c"=>"blue");//Search an array for the value "green" and return its key
+echo array_search("green",$c);
+echo "<br>";
+
+$sh = array("a"=>"red","b"=>"green","c"=>"blue");//Remove the First Element('red')
+echo array_shift($sh)."<br>";
+print_r ($sh);
+
+$f=array(5,15,25);
+echo array_sum($f);
+echo"<br>";
+
+print_r(array_slice($cars,2));//Start the slice from the third array element, and return the rest of the elements in the array
+echo"<br>";
+
+
+$g=array("a"=>"red","b"=>"green");//Insert the element "blue" to an array
+array_unshift($g,"blue");
+print_r($g);
+echo "<br>";
+
+$pet=array("Bheem"=>"35","Jaggu"=>"37","Tony"=>"43");//Sort an associative array in descending order
+arsort($pet);
+
+foreach($pet as $key => $value)
+{
+	echo "Name=". $key.", Age =". $value;
+	echo "<br>";
+}
+echo"<br>";
+
+$people = array("Bheem", "Jaggu", "Tony", "Raju");
+
+if (in_array("Bheem", $people))
+  {
+  echo "Match Found";
+  }
+else
+  {
+  echo "Match not found";
+  }
+echo"<br>"
+
+echo(sizeof($cars));//Return the number of elements in an array
+
+echo"<br>";
+
+shuffle($cars);//Randomize the order of the elements in the array
+print_r($cars);
